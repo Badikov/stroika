@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title><%= content_for?(:title) ? yield(:title) : "Stroika" %></title>
+		<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Prelaunch Signup" %>">
+		<meta name="author" content="">
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<%= yield(:head) %>
+		
+	</head>
+<body class="<%= controller_name %> <%= action_name %>">
+    <%= render 'layouts/navigation' %>
+    <%= yield %>
+	<%= render 'layouts/footer' %>
+</body>
+</html>
